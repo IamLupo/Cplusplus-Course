@@ -1,0 +1,354 @@
+1: Introduction (1 min):
+	I am Ludo Ruisch from the Netherlands. Working as a Software/Security researcher focusing on software.
+	This will be a course about Basic C++ and how to do basic reversing on executables and take over a process with windows calls and techniques.
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2: What are we gonna talk about? (1 min)
+	- Basic Knowledge about C++			(5 min)
+	- Compilers and Compilation process	(7 min)
+	- Show Basics						(15-25 min)
+	- Show C and C++ combined			(5 min)
+	- Show Library						(5 min)
+	- IDA debugging						(5-10 min)
+	- Show example case to patch in C++	(20 min)
+	- Questions?						(5-10 min)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3: Tall about Basic knowledge C++ (5 min)
+	Tell about C++:
+		Developed in 1979 by Bjarne Stroustrup
+		standardized in 1998
+		
+		C++03, C++11, C++14, C++17 and C++20
+		
+		https://en.wikipedia.org/wiki/C%2B%2B
+	
+	Standard Template Library (STL)
+		types (vectors, lists, maps, sets, queues, stacks, arrays, tuples)
+		algorithms (find, for_each, binary_search, random_shuffle, etc.)
+		input/output facilities
+		filesystem library
+		localisation support
+		smart pointers for automatic memory management
+		regular expression support
+		multi-threading library
+		time utilities (measurement, getting current time, etc.)
+		exceptions
+		a random number generator
+		atomics support
+	
+	Standardation and Documentation:
+		ISOCPP:
+			Party that explained a lot of complex situations and describe how many compiles has been implemented these features
+			and what the general direction is for the cpp language.
+			https://isocpp.org/
+		
+		cplusplus:
+			Website where the STD library is been documented with example cases.
+			http://www.cplusplus.com
+	
+	IDE:
+		Eclipse:
+			Eclipse is a popular open-source IDE that C++ programmers can use to develop applications using a special C++ plugin.
+			https://www.eclipse.org/
+		
+		NetBeans:
+			NetBeans is an open-source IDE for building applications with dynamic and static libraries in C++.
+			https://netbeans.org/
+		
+		Visual Studio:
+			is a "full-featured" and "convenient" development environment.
+			https://visualstudio.microsoft.com/
+		
+		Visual Studio Code:
+			is a cross-platform (Linux, Mac OS, Windows) editor that can be extended with plugins to your needs.
+			https://code.visualstudio.com/
+		
+		CodeBlocks:
+			Code::Blocks is a free C, C++ and Fortran IDE built to meet the most demanding needs of its users.
+			It is designed to be very extensible and fully configurable.
+			http://www.codeblocks.org/
+		
+		Qt Creator:
+			Qt Creator is a cross-platform integrated development environment (IDE) built for the maximum developer experience.
+			Qt Creator runs on Windows, Linux, and macOS desktop operating systems, and allows developers to create applications
+			across desktop, mobile, and embedded platforms.
+			https://www.qt.io/
+			
+	Extra:
+		Bjarne Stroustrup talk:
+			https://www.youtube.com/watch?v=uTxRF5ag27A
+		
+		Boost library vs C++17
+			https://www.fluentcpp.com/2019/11/19/how-c17-benefits-from-boost-libraries-part-one/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4: Compilers and Compilation process: (7 min)
+	Compilers:
+		Clang:
+			Website: https://clang.llvm.org/
+			Wiki: https://en.wikipedia.org/wiki/Clang
+		
+		GCC:
+			Wiki: https://en.wikipedia.org/wiki/GNU_Compiler_Collection
+			
+		Mingw:
+			Wiki: https://en.wikipedia.org/wiki/MinGW
+		
+		Mingw64:
+			Website: http://mingw-w64.org/doku.php
+			Wiki: https://en.wikipedia.org/wiki/Mingw-w64
+		
+		Visual studio C++:
+			Wiki: https://en.wikipedia.org/wiki/Microsoft_Visual_C%2B%2B
+	
+	Example cases:
+		Compile c program:
+			gcc -o main.c -o main.exe
+		
+		Compile C++ with C++17 and strip debug information
+			gcc -o main.cpp -o main.exe --std=c++17 -s
+			
+		Compile c++ windows dll:
+			g++ main.cpp -o Compile.dll -shared -static-libgcc -static-libstdc++ -static --std=c++17 
+		
+		Compile library:
+			ar rcs lib/libmycustomlib.a src/math.o
+	
+
+	
+	GCC/Clang compile Parameters:
+		-o <name>			Your output file name.
+		-c					Compile the .cpp or .c file to a object file
+		-std=<version>		This to include what C++ standards you want to use.
+		
+		-g					Include debugging information in executable
+		-s					Strip debugging information
+		
+		-I <path>			Include header directories.
+		
+		-L <path>			Include library directories to use in -l<libname>
+		-l<libname>			Include lib files to your project.
+		
+		-O<level>			Optimizations by compiler in assembly. Default level 2 is been used.
+		
+		-static				Compile your project without references to development dll's.
+							This option you use when you distribute your project into the wild.
+							And will increase compiling times.
+		
+		-shared				This option you use when you compile as a dll.
+		-static-libgcc		Static gcc library to include in your dll.
+		-static-libstdc++	Static std library to include in your dll.
+
+
+	Makefiles:
+		Cmake:
+			https://en.wikipedia.org/wiki/CMake
+		
+		Makefile:
+			https://en.wikipedia.org/wiki/Makefile
+		
+		Qmake(QT):
+			https://doc.qt.io/qt-5/qmake-manual.html
+
+
+
+
+
+
+
+
+
+
+
+
+
+5: Show Basics: (15-25 min)
+	- Console
+	- String
+	- Vector and Templates
+	- Try/Catch
+	- Class with .cpp and .h
+	- IO Files
+
+
+
+
+
+
+
+
+
+
+
+
+
+6: Show C and C++ combined (5 min)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+7: Show Library (5 min)
+	- Explain directory structure
+	- Show how to create a library
+	- Show the compile process
+	- Show how your application can use a library
+	
+	Basicly:
+		When a application looks for a library this mean the functionality is been expended with a pre-compiled source code and
+		header files to understand how the functionality is been used.
+		
+		This can be lib*.a, *.dll, *.so files.
+	
+	Libraries recommendation:
+		GMP:
+			Big number library
+			https://en.wikipedia.org/wiki/GNU_Multiple_Precision_Arithmetic_Library
+			https://gmplib.org/
+		
+		QT:
+			GUI lib with a lot of advanced functionality
+			https://en.wikipedia.org/wiki/Qt_(software)
+			https://www.qt.io/
+
+		zlib:
+			Compress/Decompress lib
+			https://en.wikipedia.org/wiki/Zlib
+			http://zlib.net/
+
+
+		Boost:
+			Library that provides support for tasks and structures. 
+			https://en.wikipedia.org/wiki/Boost_(C%2B%2B_libraries)
+			https://www.boost.org/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+8: IDA debugging (5-10 min)
+	- Show information
+	- Show how to debug
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+9: Show example case to patch in C++ (20 min)
+	- Explain the runner program
+	- Find the information in debugger
+	- Explain how to make a injector and patch a program
+	- Explain how to make a basic dll that you can inject into a process
+	- Explain how to make a patching dll that take over the process. And talk about the attack surface.
+
+
+
+
+
+
+
+
+
+
+
+
+10: Questions?
+// 42?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
