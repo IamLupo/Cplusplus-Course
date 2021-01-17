@@ -20,6 +20,9 @@ g++ vector.cpp -o vector.exe -static -std=c++17 -s
 echo Compiling TryCatch
 g++ trycatch.cpp -o trycatch.exe -static -std=c++17 -s
 
+echo Compiling IOFiles
+g++ iofiles.cpp -o iofiles.exe -static -std=c++17 -s
+
 echo Compiling MyClass
 g++ -c myclass.cpp -o myclass.o -static -std=c++17
 

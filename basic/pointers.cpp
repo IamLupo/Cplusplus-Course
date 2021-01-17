@@ -2,6 +2,10 @@
 
 using namespace std;
 
+/*
+	int*		->	int
+	0xb81420	->	1337
+*/
 int main()
 {
 	int* number_ptr;
