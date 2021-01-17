@@ -21,3 +21,4 @@ void MyClass::MyFunction()
 	cout << "MyClass execute MyFunction." << endl;
 	cout << "name = " << this->_name << endl;
 }
+

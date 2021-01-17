@@ -11,8 +11,8 @@ using namespace std;
 
 int main()
 {
-	ofstream ofile;
 	ifstream ifile;
+	ofstream ofile;
 	string line;
 	
 	cout << "[*] Create test.txt" << endl;

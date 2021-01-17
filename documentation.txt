@@ -159,10 +159,10 @@
 	
 	Example cases:
 		Compile c program:
-			gcc -c main.c -o main.exe
+			gcc main.c -o main.exe
 		
 		Compile C++ with C++17 and strip debug information
-			gcc -c main.cpp -o main.exe --std=c++17 -s
+			g++ main.cpp -o main.exe --std=c++17 -s
 			
 		Compile c++ windows dll:
 			g++ main.cpp -o Compile.dll -shared -static-libgcc -static-libstdc++ -static --std=c++17 
