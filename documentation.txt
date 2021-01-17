@@ -5,8 +5,7 @@
 	Discord: IamLupo#5130
 	Discord server: https://discord.gg/BpEBPdg
 	
-	This will be a course about Basic C++ and how to do basic reversing on executables and take over a process with
-	windows calls and different techniques.
+	Course: http://gitlab.ludoruisch.nl/root/Cplusplus-Course/tree/master
 	
 	
 
@@ -26,6 +25,9 @@
 
 
 2: What are we gonna talk about? (1 min)
+	This will be a course about Basic C++ and how to do basic reversing on executables and take over a process with
+	windows calls and different techniques.
+	
 	- Basic Knowledge about C++			(5 min)
 	- Compilers and Compilation process	(7 min)
 	- Show Basics						(15-25 min)
