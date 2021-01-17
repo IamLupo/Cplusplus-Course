@@ -1,8 +1,14 @@
 1: Introduction (1 min):
 	I am Ludo Ruisch from the Netherlands. Working as a Software/Security researcher focusing on software.
-	This will be a course about Basic C++ and how to do basic reversing on executables and take over a process with windows calls and techniques.
 	
-
+	Github: https://github.com/IamLupo/
+	Discord: IamLupo#5130
+	Discord server: https://discord.gg/BpEBPdg
+	
+	This will be a course about Basic C++ and how to do basic reversing on executables and take over a process with
+	windows calls and different techniques.
+	
+	
 
 
 
@@ -151,10 +157,10 @@
 	
 	Example cases:
 		Compile c program:
-			gcc -o main.c -o main.exe
+			gcc -c main.c -o main.exe
 		
 		Compile C++ with C++17 and strip debug information
-			gcc -o main.cpp -o main.exe --std=c++17 -s
+			gcc -c main.cpp -o main.exe --std=c++17 -s
 			
 		Compile c++ windows dll:
 			g++ main.cpp -o Compile.dll -shared -static-libgcc -static-libstdc++ -static --std=c++17 
